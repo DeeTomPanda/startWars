@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FetchDataService } from './services/fetchData/fetch-data.service';
+import { CacheService } from './services/cacheService/cache.service';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent, CardsComponent, ErrorComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [FetchDataService],
+  providers: [FetchDataService, CacheService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
