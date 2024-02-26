@@ -1,5 +1,5 @@
-<div class="min-w-screen bg-fixed z-2" id="cover">
-  <div>
-    <app-cards></app-cards>
-  </div>
+<div class="min-w-screen bg-fixed overflow-y-auto pt-6" id="cover">
+  <app-header></app-header>
+  <app-cards [data]="results[0]"></app-cards>
+  <app-navigation></app-navigation>
 </div>

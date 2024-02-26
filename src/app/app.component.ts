@@ -8,8 +8,12 @@ import { FetchDataService } from './services/fetchData/fetch-data.service';
 })
 export class AppComponent implements OnInit {
   constructor(private HTTP: FetchDataService) {}
+  results: Array<Record<string, any>> = [];
+  dummy: Array<number> = new Array(100).fill(0);
 
   ngOnInit(): void {
-    this.HTTP.getData().subscribe((data) => console.log(data));
+    this.HTTP.getData().subscribe((data) => {
+      this.results = data.results;
+    });
   }
 }
