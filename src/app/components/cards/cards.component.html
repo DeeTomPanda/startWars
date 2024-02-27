@@ -1,16 +1,16 @@
 <div
   *ngFor="let i of [0, 1, 2, 3, 4]"
-  class="min-h-screen grid grid-cols-4 gap-8 md:grid-cols-6 grid-flow-row md:gap-y-4 md:gap-x-8"
+  class="min-h-screen grid grid-cols-4 gap-y-8 md:grid-cols-6 grid-flow-row md:gap-y-4 md:gap-x-8"
 >
   <!--For the low hanging effect om md and above-->
   <div
-    class="border-red-100 border-2 col-start-2 col-span-2 md:row-start-2 md:rounded-lg md:row-span-4 text-white"
+    class="border-red-100 border-2 col-start-2 col-span-2 md:row-start-2 rounded-lg md:row-span-4 text-white"
   >
     {{ 2 * i }}
   </div>
   <!--For normal layouton md and above-->
   <div
-    class="border-red-100 border-2 col-span-2 col-start-2 mb-8 md:col-start-4 md:rounded-lg md:row-span-4 text-white md:mb-0"
+    class="border-red-100 border-2 col-span-2 col-start-2 mb-8 md:col-start-4 rounded-lg md:row-span-4 text-white md:mb-0"
   >
     {{ 2 * i + 1 }}
   </div>
