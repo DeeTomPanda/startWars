@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from './services/fetchData/fetch-data.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,16 @@ import { FetchDataService } from './services/fetchData/fetch-data.service';
 export class AppComponent implements OnInit {
   constructor(private HTTP: FetchDataService) {}
   results: Array<Record<string, any>> = [];
-  dummy: Array<number> = new Array(100).fill(0);
+  citizens: Array<Record<string, any>> = [];
 
   ngOnInit(): void {
-    this.HTTP.getData().subscribe((data) => {
-      this.results = data.results;
-    });
+    forkJoin([this.HTTP.getPlanets(), this.HTTP.getAllCitizens()]).subscribe(
+      ([planetsData, citizensData]) => {
+        this.results = planetsData.results;
+        this.citizens = citizensData;
+
+        console.log(this.citizens);
+      }
+    );
   }
 }

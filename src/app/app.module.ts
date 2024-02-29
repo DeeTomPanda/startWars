@@ -10,6 +10,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CardsComponent } from './components/cards/cards.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,13 @@ import { HeaderComponent } from './components/header/header.component';
     ErrorComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatIconModule,
+  ],
   providers: [FetchDataService, CacheService],
   bootstrap: [AppComponent],
 })

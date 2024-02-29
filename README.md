@@ -1,10 +1,12 @@
-# WarpZone
+# starWars
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+(NOTE: In the tailwind.config.js REPLACE the content with your absolute path, the relative path does not seem to work
+Link->https://github.com/tailwindlabs/tailwindcss/issues/6516#issuecomment-1022920121)
 
 ## Code scaffolding
 
